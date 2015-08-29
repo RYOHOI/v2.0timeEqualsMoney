@@ -7,6 +7,12 @@
 ## 在线支付
 在线支付仅为辅助雇主便捷快速地发工资，不强制雇主使用。若发生拖欠工资，需要兼客主动举报，由平台调解。
 
+相较于传统的支付方式（线下或银行转账）在线支付有 3 个优点：
+
+- 方便：不用一个个要银行账户或发钱。
+- 快捷：随时随地发工资，快速到账。
+- 易于追踪：提供易读的流水记录。
+
 ![image](img/home-b-manage.png)
 
 点击雇主首页「已完成」tab 中的普通兼职或抢单兼职，进入「兼客管理」页。页面底部有浮动置底按钮「在线支付」。
@@ -40,18 +46,16 @@
 #### 确认支付
 页面底部有「确认支付」按钮浮动置底，按钮后缀为所支付总金额。雇主可多次打开岗位且对同一兼客进行多次支付。
 
-点击「确认支付」，将账单提交至微信。优先使用「[钱袋子](money-bag.html)」余额支付。
+点击「确认支付」，将账单提交至微信。优先使用「[钱袋子](money-bag.html)」中的余额支付。
 
 --------------------
 注：v2.0 版本暂不对支付宝进行支持。
 
 ## 付款/到款提醒
+详见「[消息铃铛](notification.html)」。
 
+### 付款提醒
+雇主所发布兼职（抢单或普通）到期结束后，系统发送付款提醒至雇主的「消息铃铛」。
 
-Index	rename greencode.png	5 months ago
-README.md	Initial commit	5 months ago
-index.html	Create index.html	3 minutes ago
-long screenshot.jpg	long screenshot sticker improvement	5 months ago
-wechatID_ryohoi.png	rename greencode.png	5 months ago
-zeplin_debut.png	zeplin debut	5 months ago
-功能概述. html
+### 到款提醒
+雇主向兼客付工资后，系统发送到款提醒至兼客的「消息铃铛」。
