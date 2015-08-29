@@ -1,0 +1,528 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Georgia, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Heiti SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #585a62;
+  padding: 50px 50px 100px 50px;
+}
+em {
+  font-style: normal;
+}
+a {
+  color: #4285f4;
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: 1px solid #4285f4;
+}
+a.absent {
+  color: #cc0000;
+}
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+h1,
+h3 {
+  width: 796px;
+  margin: 0 auto;
+  color: #34363f;
+}
+h5,
+h2,
+h4 {
+  color: #34363f;
+}
+h5,
+h2,
+h4,
+ul,
+hr,
+blockquote,
+ul,
+ol,
+dl,
+li,
+table,
+pre {
+  width: 700px;
+  margin: 0 auto;
+}
+p {
+  width: 700px;
+  margin: 0 auto;
+}
+h1 tt {
+  font-size: inherit;
+}
+h2 tt {
+  font-size: inherit;
+}
+h3 tt {
+  font-size: inherit;
+}
+h4 tt {
+  font-size: inherit;
+}
+h1 {
+  font-size: 22px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 8px;
+}
+h2 {
+  font-size: 28px;
+  font-weight: normal;
+  text-align: center;
+  border-bottom: 1px solid #e5e6e9;
+  margin-top: 64px;
+  margin-bottom: 24px;
+}
+h3 {
+  font-size: 23px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+h4 {
+  font-size: 18px;
+  padding-top: 16px;
+}
+h5 {
+  font-size: 16px;
+  padding: 0;
+  line-height: 2;
+}
+p {
+  font-size: 16px;
+  line-height: 2;
+  text-align: justify;
+  text-justify: ideographic;
+  margin-bottom: 16px;
+}
+li > p {
+  margin-bottom: 0;
+}
+hr {
+  background: #e5e6e9;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+  margin-top: 0;
+}
+li p.first {
+  display: inline-block;
+}
+li {
+  margin: 0;
+}
+ul,
+ol {
+  padding-left: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+dl {
+  padding: 0;
+}
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+dl dt:first-child {
+  padding: 0;
+}
+dl dt > :first-child {
+  margin-top: 0;
+}
+dl dt > :last-child {
+  margin-bottom: 0;
+}
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+dl dd > :first-child {
+  margin-top: 0;
+}
+dl dd > :last-child {
+  margin-bottom: 0;
+}
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777;
+}
+blockquote > :first-child {
+  margin-top: 0;
+}
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+table {
+  padding: 0;
+  border-collapse: collapse;
+}
+table tr {
+  border-top: 1px solid #cccccc;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+table tr th {
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  margin: 0;
+  padding: 6px 13px;
+}
+table tr td {
+  border: 1px solid #cccccc;
+  margin: 0;
+  padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+  margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+  margin-bottom: 0;
+}
+img {
+  padding: 24px 0;
+  /*max-width: 100%;*/
+  /*position: relative;*/
+  /*right: 50%;*/
+}
+span.frame {
+  display: block;
+  overflow: hidden;
+}
+span.frame > span {
+  border: 1px solid #dddddd;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+span.frame span img {
+  display: block;
+  float: left;
+}
+span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+span.float-left span {
+  margin: 13px 0 0;
+}
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+code,
+tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+code {
+  font-family: "Courier New", "Courier";
+  font-weight: bold;
+}
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+pre code,
+pre tt {
+  background-color: transparent;
+  border: none;
+}
+sup {
+  font-size: 0.83em;
+  vertical-align: super;
+  line-height: 0;
+}
+* {
+  -webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+  body {
+    position: relative;
+    margin: 0 auto;
+  }
+}
+@media print {
+  table,
+  pre {
+    page-break-inside: avoid;
+  }
+  pre {
+    word-wrap: break-word;
+  }
+}
+
+</style>
+<title>雇主招聘</title>
+
+</head>
+<body>
+<h1>雇主招聘</h1>
+
+<h2>首页</h2>
+
+<p> 雇主端首页分为「正在招人」「已完成」两个 tab 页。如图所示。</p>
+
+<p><img src="img/home-b.png" alt="image" /></p>
+
+<h2>正在招人</h2>
+
+<p><img src="img/home-b-hiring.png" alt="image" /></p>
+
+<p>该 tab 页中包含：</p>
+
+<ul>
+<li>报名中的岗位（普通兼职或抢单兼职）</li>
+<li>审核中的岗位</li>
+</ul>
+
+
+<p>岗位以卡片形式呈现。点击卡片右上角出现下列列表，内含可选动作：「结束招聘」。</p>
+
+<p>区别于普通兼职，抢单兼职标题前有 [抢] 字样。卡片底部为已报名兼客列表，有头像者显示头像，否则以姓氏代之。</p>
+
+<h3>结束招聘</h3>
+
+<p>岗位招满后自动从「正在招人」移至「已完成」。同时，支持雇主在既定名额未满时手动结束招聘。</p>
+
+<h3>审核中</h3>
+
+<p>审核中的岗位仅雇主可见，不出现在兼客端。</p>
+
+<h2>已报名</h2>
+
+<p><img src="img/home-b-applicant.png" alt="image" /></p>
+
+<p>点击岗位卡片（除右上角外，整块卡片区域均为热区）进入「已报名」页。</p>
+
+<h3>数字后缀</h3>
+
+<p>页面标题数字后缀为该岗位报名数。</p>
+
+<blockquote><p>格式：已报名 (5)</p></blockquote>
+
+<h3>岗位链接</h3>
+
+<p>紧邻标题栏为条状岗位链接，点击后跳转至岗位详情页。</p>
+
+<p>不固定浮于顶部，随页面滚动。</p>
+
+<h3>兼客卡片</h3>
+
+<p>兼客信息及可选动作已卡片形式组织。</p>
+
+<p>其中兼客信息包含：</p>
+
+<ul>
+<li>头像</li>
+<li>姓名</li>
+<li>星级（换算为 5 分平均值，带 1 位小数）</li>
+<li>上岗日期</li>
+<li>放鸽子次数</li>
+<li>完成工作次数（雇主手动点击「完工」或逾期系统自动判定）</li>
+</ul>
+
+
+<p>可选动作包含：</p>
+
+<ul>
+<li>拨打兼客电话</li>
+<li>不合格</li>
+<li>录用</li>
+</ul>
+
+
+<p>兼客报名后即占用该岗位的 1 个名额，仅当雇主点击「不合格」后，该名额被释放。</p>
+
+<h3>兼客详情</h3>
+
+<p><img src="img/home-b-applicantDetail.png" alt="image" /></p>
+
+<p>点击兼客卡片中除下部分可选动作条外的区域，进入兼客详情页。</p>
+
+<p>以兼客姓名作为详情页标题。</p>
+
+<p>兼客详细信息分为个人资料及工作经历 2 部分。</p>
+
+<p><strong>个人资料</strong>包含：</p>
+
+<ul>
+<li>头像</li>
+<li>放鸽子次数</li>
+<li>完成工作次数</li>
+<li>姓名</li>
+<li>身份证号</li>
+<li>常在地</li>
+<li>学校</li>
+<li>性别</li>
+<li>身高</li>
+<li>体重</li>
+</ul>
+
+
+<p>极端情况下，兼客个人资料仅「姓名」一项，放鸽子及完成工作经历均为 0。新用户报名普通兼职是要求兼客输入个人资料，仅「姓名」为必填项。抢单兼职中有姓名、身份证号（已认证）。</p>
+
+<p>如学校、性别等字段，若内容为空，则不在页面中显示。</p>
+
+<p><strong>工作记录</strong>包含完工记录，以时间轴形式组织。</p>
+
+<h3>全部录用</h3>
+
+<p>标题右侧有可选动作「全部录用」，点击后批量录用所有报名兼客。</p>
+
+<h2>已完成</h2>
+
+<p><img src="img/home-b-finished.png" alt="image" /></p>
+
+<p>该 tab 页包含以下不同状态的岗位：</p>
+
+<ul>
+<li>已报满的岗位（抢单或普通）</li>
+<li>手动结束报名的岗位（抢单或普通）</li>
+<li>审核失败的岗位</li>
+</ul>
+
+
+<p>岗位以紧凑的列表形式组织，点击列表项进入该岗位「兼客管理」页。</p>
+
+<h2>兼客管理</h2>
+
+<p><img src="img/home-b-manage.png" alt="image" /></p>
+
+<h3>岗位链接</h3>
+
+<p>（与「已报名」页一致）</p>
+
+<h3>兼客列表</h3>
+
+<p>针对每名兼客有「放鸽子」「完工」2 个可选动作。点击后按钮组消失，以图标表示处理状态。</p>
+
+<p>另外，被标识为完工的兼客列表项会延伸出星级评价控件。雇主可以只给星级，不写评价。点击「写评价」跳转至评价页。</p>
+
+<h3>群发消息</h3>
+
+<p><img src="img/group-msg.png" alt="image" /></p>
+
+<p>点击浮动圆按钮，进入群发消息页。标题为兼客姓名集合，溢出部分以「+6」处理，其中数字为被隐藏兼客总和。</p>
+
+<p>发送消息页面与「消息铃铛」内页一致。发送记录同步至「消息铃铛」。同一岗位可多次群发消息。</p>
+
+<h3>全部完工</h3>
+
+<p>标题右侧可选动作「全部完工」可对所有兼客进行「完工」处理。</p>
+
+<h3><a href="payment-system.html">在线支付</a></h3>
+
+<p>（点击链接，跳转到相应页面）</p>
+</body>
+</html>
