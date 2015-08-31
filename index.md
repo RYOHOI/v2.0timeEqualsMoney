@@ -5,6 +5,10 @@
 雇主在此完成岗位管理。
 ### [发布岗位](new-job.html)
 点击雇主首页标题栏「+ 」打开「发布岗位」页。
+
+-  [标签池](tag-pool.html)
+-  [发布须知](statement1.html)
+
 ### [兼客首页](home-employee.html)
 兼客在此找到心仪岗位并报名（或抢单）。
 ### [消息铃铛](notification.html)

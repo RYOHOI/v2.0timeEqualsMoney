@@ -1,0 +1,578 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Georgia, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Heiti SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #585a62;
+  padding: 50px 50px 100px 50px;
+}
+em {
+  font-style: normal;
+}
+a {
+  color: #4285f4;
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: 1px solid #4285f4;
+}
+a.absent {
+  color: #cc0000;
+}
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+h1,
+h3 {
+  width: 796px;
+  margin: 0 auto;
+  color: #34363f;
+}
+h5,
+h2,
+h4 {
+  color: #34363f;
+}
+h5,
+h2,
+h4,
+ul,
+hr,
+blockquote,
+ul,
+ol,
+dl,
+li,
+table,
+pre {
+  width: 700px;
+  margin: 0 auto;
+}
+p {
+  width: 700px;
+  margin: 0 auto;
+}
+h1 tt {
+  font-size: inherit;
+}
+h2 tt {
+  font-size: inherit;
+}
+h3 tt {
+  font-size: inherit;
+}
+h4 tt {
+  font-size: inherit;
+}
+h1 {
+  font-size: 22px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 8px;
+}
+h2 {
+  font-size: 28px;
+  font-weight: normal;
+  text-align: center;
+  border-bottom: 1px solid #e5e6e9;
+  margin-top: 64px;
+  margin-bottom: 24px;
+}
+h3 {
+  font-size: 23px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+h4 {
+  font-size: 18px;
+  padding-top: 16px;
+}
+h5 {
+  font-size: 16px;
+  padding: 0;
+  line-height: 2;
+}
+p {
+  font-size: 16px;
+  line-height: 2;
+  text-align: justify;
+  text-justify: ideographic;
+  margin-bottom: 16px;
+}
+li > p {
+  margin-bottom: 0;
+}
+hr {
+  background: #e5e6e9;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+  margin-top: 0;
+}
+li p.first {
+  display: inline-block;
+}
+li {
+  margin: 0;
+}
+ul,
+ol {
+  padding-left: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+dl {
+  padding: 0;
+}
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+dl dt:first-child {
+  padding: 0;
+}
+dl dt > :first-child {
+  margin-top: 0;
+}
+dl dt > :last-child {
+  margin-bottom: 0;
+}
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+dl dd > :first-child {
+  margin-top: 0;
+}
+dl dd > :last-child {
+  margin-bottom: 0;
+}
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777;
+}
+blockquote > :first-child {
+  margin-top: 0;
+}
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+table {
+  padding: 0;
+  border-collapse: collapse;
+}
+table tr {
+  border-top: 1px solid #cccccc;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+table tr th {
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  margin: 0;
+  padding: 6px 13px;
+}
+table tr td {
+  border: 1px solid #cccccc;
+  margin: 0;
+  padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+  margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+  margin-bottom: 0;
+}
+img {
+  padding: 24px 0;
+  /*max-width: 100%;*/
+  /*position: relative;*/
+  /*right: 50%;*/
+}
+span.frame {
+  display: block;
+  overflow: hidden;
+}
+span.frame > span {
+  border: 1px solid #dddddd;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+span.frame span img {
+  display: block;
+  float: left;
+}
+span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+span.float-left span {
+  margin: 13px 0 0;
+}
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+code,
+tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+code {
+  font-family: "Courier New", "Courier";
+  font-weight: bold;
+}
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+pre code,
+pre tt {
+  background-color: transparent;
+  border: none;
+}
+sup {
+  font-size: 0.83em;
+  vertical-align: super;
+  line-height: 0;
+}
+* {
+  -webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+  body {
+    position: relative;
+    margin: 0 auto;
+  }
+}
+@media print {
+  table,
+  pre {
+    page-break-inside: avoid;
+  }
+  pre {
+    word-wrap: break-word;
+  }
+}
+
+</style>
+<title>发布岗位</title>
+
+</head>
+<body>
+<h1>发布岗位</h1>
+
+<h2>新建抢单兼职</h2>
+
+<p><img src="img/new-fast.png" alt="image" /></p>
+
+<p>点击雇主首页标题栏右侧「+」进入「新建岗位」页。有「抢单兼职」「普通兼职」2 种表单供雇主选择。由表单开头处的「极速招人」作切换。</p>
+
+<p>抢单岗位信息有 2 大特色：</p>
+
+<ol>
+<li>岗位要求可被标准化为标签，供雇主选择。</li>
+<li>时薪制计算工资，强制达到最低时薪标准。</li>
+</ol>
+
+
+<h3>极速招人</h3>
+
+<p>开启「极速招人」模式则表单切换为「抢单兼职」。雇主首次开启时弹出信息框说明抢单模式的几大优点（文案待补充）。雇主也可以手动点击「极速招人」右侧图标，再次打开信息框。</p>
+
+<hr />
+
+<p>注：默认不开启「极速招人」模式。</p>
+
+<h3>标题</h3>
+
+<p>用一句话概括工作内容。限 15 中文字符。</p>
+
+<h3>岗位类型</h3>
+
+<p>v2.0 抢单模式首先支持以下 5 种高频、低门槛岗位：</p>
+
+<ul>
+<li>发传单</li>
+<li>礼仪</li>
+<li>促销</li>
+<li>观众</li>
+<li>现场协助</li>
+</ul>
+
+
+<h3>备注</h3>
+
+<p>备注内容以标签形式呈现。雇主可从「常用备注」中选择备注（详见<a href="tag-pool.html">标签池</a>），也能输入文字生成备注。</p>
+
+<h4>新增</h4>
+
+<p><img src="img/tag-add.png" alt="image" /></p>
+
+<ol>
+<li>点击「常用备注」中的标签模板，可在文本框中新增标签。用户可重复添加同一标签，暂不做限制（后期优化交互）。</li>
+<li>当岗位要求特殊，找不到合适的标签时，直接向文本框输入文字，按下输入法中的「完成」或「回车键」时文字内容形成独立标签。</li>
+</ol>
+
+
+<h4>删除</h4>
+
+<ol>
+<li>输入法退格键删除标签项。</li>
+<li>点击文本框中标签右侧「×」删除标签。</li>
+</ol>
+
+
+<h4>编辑</h4>
+
+<p>备注内容可反复编辑。点击标签（除右侧热区外）弹出对话框。</p>
+
+<p><img src="img/tag-edit.png" alt="image" /></p>
+
+<hr />
+
+<p>注：</p>
+
+<ol>
+<li>选择标签和输入标签可同时进行。</li>
+<li>文本框光标保持在最右侧，不允许用户左右移动光标。</li>
+<li>部分交互细节可参考微信。</li>
+</ol>
+
+
+<h3>工作日期</h3>
+
+<p>默认设置为次日，点击后弹出日历控件。抢单兼职工作日期必须在近 7 天内。</p>
+
+<p>例如，今天 8/20，则默认选中 8/21，雇主也可选择 8/21 ~ 8/27 之间任何一天。</p>
+
+<h3>时间段</h3>
+
+<p>默认设置为 9:00 上午 ~ 18:00 下午。开始时间必须早于结束时间。限制可选择工作时间段为 6:00 AM ~ 10:00 PM，其他时段不能被选择。时间选择控件以 30 分钟为跨度。</p>
+
+<h3>工作地点</h3>
+
+<p>直接在文本框中输入地点名，或使用文本框右侧「获取位置」定位当前位置作为地点名。</p>
+
+<h3>总人数</h3>
+
+<p>字段限制：输入 3 位整数。总人数最多可以是 999 人。</p>
+
+<h3>时薪</h3>
+
+<p>字段限制：不小于建议时薪的整数。最多支持 3 位数。</p>
+
+<h3>发布须知</h3>
+
+<p>默认选中。点击链接进入《<a href="statement1.html">发布须知</a>》详细内容页面。</p>
+
+<h3>确认发布</h3>
+
+<p>点击「确认发布」后，如表单无错误字段则提交至岗位库由客服审核，通过后可被兼客浏览并报名。如仍存在错误则弹框提示。</p>
+
+<h2>新建普通兼职</h2>
+
+<p>普通兼职区别于抢单兼职的字段内容有以下几项：</p>
+
+<ul>
+<li>岗位类型</li>
+<li>岗位要求</li>
+<li>工作日期</li>
+<li>报酬</li>
+</ul>
+
+
+<h3>岗位类型</h3>
+
+<p>所有已收录的岗位类型均可被选择。</p>
+
+<h3>岗位要求</h3>
+
+<p>纯文本内容。</p>
+
+<h3>工作日期</h3>
+
+<p>起始时间默认设置为次日，且不能早于次日，点击后弹出日历控件；终止时间默认设置为次日，且应晚于或等于起始时间。</p>
+
+<h3>报酬</h3>
+
+<p>由前后两部分组成，后半部分为单位，包含：</p>
+
+<ul>
+<li>元/天</li>
+<li>元/时</li>
+<li>元/次</li>
+<li>元/月</li>
+</ul>
+
+
+<p>限制前半部分输入整数。最多支持 4 位数。</p>
+
+<h2>表单切换</h2>
+
+<ol>
+<li>在以下字段填有内容时，开启「极速招人」：
+
+<ul>
+<li>标题：（不变）</li>
+<li>岗位类型：若属于 5 个标准岗位，则沿用。</li>
+<li>岗位说明：（隐藏）</li>
+<li>日期：使用开始日期</li>
+<li>时间：（不变）</li>
+<li>工作地点：（不变）</li>
+<li>总人数：（不变）</li>
+<li>薪资：（隐藏）</li>
+</ul>
+</li>
+<li>在以下字段填有内容时，关闭「极速招人」：
+
+<ul>
+<li>标题：（不变）</li>
+<li>岗位类型：（不变）</li>
+<li>岗位说明：（隐藏）</li>
+<li>日期：设定起始日期为同一天</li>
+<li>时间：（不变）</li>
+<li>工作地点：（不变）</li>
+<li>总人数：（不变）</li>
+<li>薪资：（隐藏）</li>
+</ul>
+</li>
+</ol>
+
+
+<p>切换过程中无法沿用的字段内容仅被隐藏，不被清除，反复切换的过程中可重现，不丢失。</p>
+
+<h2>薪资计算</h2>
+
+<h3>抢单兼职</h3>
+
+<p>由所设定时间段得出小时数，与时薪相乘得出初始薪资。</p>
+
+<h3>普通兼职</h3>
+
+<p>由于日期跨度长，薪资单位多，计算方式各有不同。</p>
+
+<h4>元/天</h4>
+
+<p>报名时要求兼客选择若干具体日子，天数与单位薪资相乘得初始薪资。</p>
+
+<h4>元/时</h4>
+
+<p>报名时要求兼客选择若干具体日子，天数与每天小时数与单位薪资相乘得初始薪资。</p>
+
+<h4>元/次</h4>
+
+<p>报名时无需选择具体日子。初始薪资与单位薪资相同。</p>
+
+<h4>元/月</h4>
+
+<p>报名时无需选择具体日子。初始薪资与单位薪资相同。</p>
+</body>
+</html>
