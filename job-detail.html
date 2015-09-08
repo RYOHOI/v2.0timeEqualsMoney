@@ -1,0 +1,517 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Georgia, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Heiti SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #585a62;
+  padding: 50px 50px 100px 50px;
+}
+em {
+  font-style: normal;
+}
+a {
+  color: #4285f4;
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: 1px solid #4285f4;
+}
+a.absent {
+  color: #cc0000;
+}
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+h1,
+h3 {
+  width: 796px;
+  margin: 0 auto;
+  color: #34363f;
+}
+h5,
+h2,
+h4 {
+  color: #34363f;
+}
+h5,
+h2,
+h4,
+ul,
+hr,
+blockquote,
+ul,
+ol,
+dl,
+li,
+table,
+pre {
+  width: 700px;
+  margin: 0 auto;
+}
+p {
+  width: 700px;
+  margin: 0 auto;
+}
+h1 tt {
+  font-size: inherit;
+}
+h2 tt {
+  font-size: inherit;
+}
+h3 tt {
+  font-size: inherit;
+}
+h4 tt {
+  font-size: inherit;
+}
+h1 {
+  font-size: 22px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 8px;
+}
+h2 {
+  font-size: 28px;
+  font-weight: normal;
+  text-align: center;
+  border-bottom: 1px solid #e5e6e9;
+  margin-top: 64px;
+  margin-bottom: 24px;
+}
+h3 {
+  font-size: 23px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+h4 {
+  font-size: 18px;
+  padding-top: 16px;
+}
+h5 {
+  font-size: 16px;
+  padding: 0;
+  line-height: 2;
+}
+p {
+  font-size: 16px;
+  line-height: 2;
+  text-align: justify;
+  text-justify: ideographic;
+  margin-bottom: 16px;
+}
+li > p {
+  margin-bottom: 0;
+}
+hr {
+  background: #e5e6e9;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+  margin-top: 0;
+}
+li p.first {
+  display: inline-block;
+}
+li {
+  margin: 0;
+}
+ul,
+ol {
+  padding-left: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+dl {
+  padding: 0;
+}
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+dl dt:first-child {
+  padding: 0;
+}
+dl dt > :first-child {
+  margin-top: 0;
+}
+dl dt > :last-child {
+  margin-bottom: 0;
+}
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+dl dd > :first-child {
+  margin-top: 0;
+}
+dl dd > :last-child {
+  margin-bottom: 0;
+}
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777;
+}
+blockquote > :first-child {
+  margin-top: 0;
+}
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+table {
+  padding: 0;
+  border-collapse: collapse;
+}
+table tr {
+  border-top: 1px solid #cccccc;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+table tr th {
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  margin: 0;
+  padding: 6px 13px;
+}
+table tr td {
+  border: 1px solid #cccccc;
+  margin: 0;
+  padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+  margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+  margin-bottom: 0;
+}
+img {
+  padding: 24px 0;
+  /*max-width: 100%;*/
+  /*position: relative;*/
+  /*right: 50%;*/
+}
+span.frame {
+  display: block;
+  overflow: hidden;
+}
+span.frame > span {
+  border: 1px solid #dddddd;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+span.frame span img {
+  display: block;
+  float: left;
+}
+span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+span.float-left span {
+  margin: 13px 0 0;
+}
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+code,
+tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+code {
+  font-family: "Courier New", "Courier";
+  font-weight: bold;
+}
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+pre code,
+pre tt {
+  background-color: transparent;
+  border: none;
+}
+sup {
+  font-size: 0.83em;
+  vertical-align: super;
+  line-height: 0;
+}
+* {
+  -webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+  body {
+    position: relative;
+    margin: 0 auto;
+  }
+}
+@media print {
+  table,
+  pre {
+    page-break-inside: avoid;
+  }
+  pre {
+    word-wrap: break-word;
+  }
+}
+
+</style>
+<title>岗位详情</title>
+
+</head>
+<body>
+<h1>岗位详情</h1>
+
+<h2><span id="employee">兼客端</span></h2>
+
+<h3>标题栏</h3>
+
+<p>从右至左，标题栏可选动作分别为：</p>
+
+<ul>
+<li>下拉列表
+
+<ul>
+<li>电话联系</li>
+<li>社交分享</li>
+<li>举报该岗位<strong>（仅报名后出现）</strong></li>
+</ul>
+</li>
+<li>雇主信息</li>
+<li>IM 对聊</li>
+</ul>
+
+
+<p>此处「电话联系」较隐蔽，鼓励兼客通过评论及 IM 解决问题。针对采集岗位，会特别引导。</p>
+
+<h3>岗位信息</h3>
+
+<p>岗位的主要信息包含：</p>
+
+<ul>
+<li>岗位标题</li>
+<li>薪资</li>
+<li>工作日期及时间段</li>
+<li>工作地点</li>
+<li>名额</li>
+<li>要求</li>
+</ul>
+
+
+<hr />
+
+<p>注：旧版本中点击「工作日期」弹框，点击「地图」跳转至地图页等功能，v2.0 暂不支持。另外，移除旧版本中的费用押金警示。</p>
+
+<h3>已报名兼客</h3>
+
+<blockquote><p>格式：11 人已报名</p></blockquote>
+
+<p>同时列出兼客头像，默认最多显示 30 个，点击「更多」显示全部。</p>
+
+<h3>雇主答疑</h3>
+
+<p>评论内容对所有用户公开。仅支持一问一答，不支持兼客互相回复。</p>
+
+<p>兼客点击「提问题」后弹框要求输入问题内容。提问将被发送至雇主<a href="notification.html">消息铃铛</a>中提醒雇主作答。兼客得到雇主回复，也将在消息铃铛中作提醒。</p>
+
+<p>每条评论包含以下信息：</p>
+
+<ul>
+<li>兼客头像</li>
+<li>兼客姓名，以姓+同学的格式呈现，例如「廖同学」。</li>
+<li>提问内容</li>
+<li>提问时间</li>
+</ul>
+
+
+<hr />
+
+<p>注：对于采集岗位特别引导兼客电话联系雇主。「这是采集来的优质岗位，推荐电话联系」</p>
+
+<h3>抢单/报名</h3>
+
+<p>岗位详情页中抢单兼职与普通兼职所呈现信息差别较少。仅体现在 3 处：</p>
+
+<ul>
+<li>标题左侧「抢」字样</li>
+<li>抢单要求内容以标签形式呈现。</li>
+<li>「报名」按钮与「抢单」按钮</li>
+</ul>
+
+
+<h4>概览</h4>
+
+<p>普通兼职</p>
+
+<p><img src="img/detail-normal.png" alt="image" /></p>
+
+<p>抢单兼职</p>
+
+<p><img src="img/detail-fast.png" alt="image" /></p>
+
+<h4>已报名</h4>
+
+<p>兼客可点击岗位要求下方的长条状「报名」按钮或右下方浮动圆按钮报名。</p>
+
+<p>如兼客已报名，则条状按钮置灰，变为「已报名」，且浮动圆按钮动作变为「电话联系」。</p>
+
+<h4>已抢单</h4>
+
+<p>兼客可点击岗位要求下方的长条状「立即抢单」按钮或右下方浮动圆按钮抢单。</p>
+
+<p>如兼客已抢单，则条状按钮置灰，变为「抢单成功」，且浮动圆按钮动作变为「电话联系」。</p>
+
+<h2><span id="employer">雇主端</span></h2>
+
+<p>与兼客端仅几处区别：</p>
+
+<h3>标题栏</h3>
+
+<p>从右至左，（列表中）从上至下，标题栏可选动作分别为：</p>
+
+<ul>
+<li>下拉列表
+
+<ul>
+<li>以此为模板：对该岗位稍作编辑后重新发布。</li>
+<li>结束招聘：未招满未到期时，主动结束招聘（沿用旧版本「关闭岗位」的功能设定）</li>
+</ul>
+</li>
+<li>刷新岗位：沿用旧版本功能设定。</li>
+<li>社交分享：沿用旧版本功能设定。</li>
+</ul>
+
+
+<h4>以此为模板</h4>
+
+<p>点击该下拉列表项后，跳转至「新建岗位」页。所有模板岗位中的字段信息复制到新页面。</p>
+
+<hr />
+
+<p>注：状态为「报名中」的岗位，可选动作如上。状态为「审核中」、「已结束」或「被举报」的岗位，移除「结束招聘」「刷新岗位」「社交分享」。</p>
+
+<p>区别于旧版本，v2.0 中不存在将某岗位保存为模板的步骤。所有由雇主通过「新建岗位」页确认发布的岗位均可被当做模板使用。</p>
+
+<h3>移除模块</h3>
+
+<p>以下可选动作或信息不在雇主端显示：</p>
+
+<ul>
+<li>圆形浮动按钮</li>
+<li>报名按钮</li>
+<li>已报名兼客</li>
+</ul>
+
+
+<h3>雇主答疑</h3>
+
+<p>移除「提问题」链接，每条兼客评论下有「回复」链接。一条评论只能被回复一次，兼客提问题，雇主答疑，兼客提另一个问题，雇主再次答疑。兼客之间不能互相评论。</p>
+</body>
+</html>
