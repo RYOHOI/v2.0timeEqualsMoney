@@ -10,6 +10,7 @@
 ### [发布岗位](new-job.html)
 点击雇主首页标题栏「+ 」打开「发布岗位」页。
 
+-  [抢单类型及薪资](hire-fast.html)
 -  [标签池](tag-pool.html)
 -  [发布须知](statement1.html)
 
